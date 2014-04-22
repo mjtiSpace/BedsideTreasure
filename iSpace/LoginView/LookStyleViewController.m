@@ -63,6 +63,7 @@
     
     //请求网络
     [NetDataService requestWithUrl:URl dictParams:dict httpMethod:@"POST" AndisWaitActivity:YES AndWaitActivityTitle:@"" andViewCtl:self completeBlock:^(id result){
+        NSLog(@"result === %@ " , result);
         NSDictionary *returnDict = result[@"message_body"] ;
         NSString *returnError = returnDict[@"error"] ;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -83,9 +84,9 @@
     */
     ResetPassWordViewController *resetPasswordView = [[ResetPassWordViewController alloc]init];
 #warning testTO_ResetPassWordViewController
-    resetPasswordView.captcha = _captchaTextfield.text ;
-    [self.navigationController pushViewController:resetPasswordView animated:YES];
-    
+//    resetPasswordView.captcha = _captchaTextfield.text ;
+//    [self.navigationController pushViewController:resetPasswordView animated:YES];
+//    
     NSString *infoPrompt ;
     
     int errorInt  = errorInfo.intValue;
